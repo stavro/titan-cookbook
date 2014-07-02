@@ -1,0 +1,17 @@
+#
+#override rexster log4j logging
+#
+log4j.rootLogger=<%= node['rexster']['log_level'] %>, stdout, fileAppender
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+#log4j.appender.stdout=org.apache.log4j.FileAppender
+#log4j.appender.stdout.file=recless.log
+#log4j.appender.stdout.append=true
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=[%t]:[%p] %C{1} - %m%n
+
+log4j.appender.fileAppender=org.apache.log4j.DailyRollingFileAppender
+log4j.appender.fileAppender.File=<%= node['rexster']['log_dir'] %>/rexster.log
+log4j.appender.fileAppender.DatePattern='.'yyyy-MM-dd
+log4j.appender.fileAppender.layout=org.apache.log4j.PatternLayout
+log4j.appender.fileAppender.layout.ConversionPattern=%d{HH:mm:ss,SSS} [%t]:[%p] %C{1} - %m%n
+log4j.appender.fileAppender.MaxBackupIndex = 7
