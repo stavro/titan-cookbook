@@ -2,7 +2,7 @@
 # Rexster Server Configuration
 #
 
-default[:rexster][:version]       = '2.4.0'
+default[:rexster][:version]       = '2.5.0'
 default[:rexster][:env]           = 'production'
 default[:rexster][:directory]     = '/opt/rexster'
 default[:rexster][:pid_dir]       = '/var/pid/rexster'
@@ -70,14 +70,14 @@ normal[:rexster][:console_directory] = "#{node.rexster.directory}/rexster_consol
 # Titan Configuration
 #
 
-default['titan']['version']   = '0.4.4'
+default['titan']['version']   = '0.5.0'
 default['titan']['directory'] = '/opt/titan'
 
 #
 # Titan Archive Attributes
 #
 
-default[:titan][:archive_name] = "titan-all-#{node.titan.version}"
+default[:titan][:archive_name] = "titan-0.5.0-hadoop2"
 default[:titan][:archive_url] = "http://s3.thinkaurelius.com/downloads/titan/#{node.titan.archive_name}.zip"
 default[:titan][:rexster_extension_url] = "http://central.maven.org/maven2/com/thinkaurelius/titan/titan-rexster/#{node.titan.version}/titan-rexster-#{node.titan.version}.jar"
 
